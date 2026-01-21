@@ -73,7 +73,7 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 15px;
       font-family: 'Poppins', sans-serif;
       font-weight: 700;
       font-size: 24px;
@@ -81,8 +81,12 @@
       text-decoration: none;
     }
     
-    .logo i {
-      font-size: 28px;
+    /* FIXED: Logo image styling */
+    .logo img {
+      height: 40px; /* Fixed height for logo */
+      width: auto; /* Maintain aspect ratio */
+      max-width: 180px; /* Maximum width */
+      object-fit: contain; /* Ensure image fits properly */
     }
     
     .nav-links {
@@ -410,6 +414,29 @@
       .main-content {
         padding: 25px;
       }
+      
+      /* Responsive logo */
+      .logo img {
+        height: 35px; /* Smaller on mobile */
+        max-width: 150px;
+      }
+      
+      .logo {
+        font-size: 20px; /* Smaller text on mobile */
+        gap: 10px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo img {
+        height: 30px;
+        max-width: 120px;
+      }
+      
+      .logo {
+        font-size: 18px;
+        gap: 8px;
+      }
     }
     
     /* Monetization Elements */
@@ -484,7 +511,7 @@
   <header class="header">
     <div class="nav-container">
       <a href="#" class="logo">
-        <img src="logo.png" alt="DPDP Audits Logo" width="200" height="50">
+        <img src="logo.png" alt="DPDP Audits Logo">
         DPDP Audits
       </a>
       
