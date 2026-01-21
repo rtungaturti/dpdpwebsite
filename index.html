@@ -52,39 +52,39 @@
     }
     
     /* Header & Navigation */
-   .header {
-  background: white;
-  box-shadow: var(--shadow);
-  position: sticky;
-  top: 0;
-  z-index: 1000; /* Increased for modal compatibility */
-}
+    .header {
+      background: white;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
     
-   .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px; /* Increased padding top/bottom */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     
     .logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 28px; /* Slightly larger font */
-  color: var(--primary);
-  text-decoration: none;
-}
-    /* FIXED: Logo image styling */
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
     .logo img {
-      height: 80px; /* Fixed height for logo */
-      width: auto; /* Maintain aspect ratio */
-      max-width: 180px; /* Maximum width */
-      object-fit: contain; /* Ensure image fits properly */
+      height: 80px;
+      width: auto;
+      max-width: 180px;
+      object-fit: contain;
     }
     
     .nav-links {
@@ -131,11 +131,12 @@
     }
     
     /* Sidebar */
-   .sidebar {
-  /* ... other styles ... */
-  position: sticky;
-  top: 120px; /* Increased from 90px to account for taller header */
-}
+    .sidebar {
+      width: 280px;
+      position: sticky;
+      top: 120px;
+      height: fit-content;
+    }
     
     .sidebar h3 {
       color: var(--primary);
@@ -389,86 +390,21 @@
       color: #9ca3af;
     }
     
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .container {
-        flex-direction: column;
-      }
-      
-      .sidebar {
-        width: 100%;
-        position: static;
-      }
-      
-      .nav-links {
-        display: none;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        color: var(--dark);
-        cursor: pointer;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .hero {
-        padding: 30px 20px;
-      }
-      
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .main-content {
-        padding: 25px;
-      }
-      
-      /* Responsive logo */
-     .logo img {
-  height: 80px;
-  width: auto;
-  max-width: 200px;
-  object-fit: contain;
-}
-      
-      .logo {
-        font-size: 20px; /* Smaller text on mobile */
-        gap: 10px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .logo img {
-        height: 30px;
-        max-width: 120px;
-      }
-      
-      .logo {
-        font-size: 18px;
-        gap: 8px;
-      }
-    }
-    
     /* Monetization Elements */
     .pricing-badge {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  display: inline-block;
-  margin-left: 10px;
-  /* Add these for fixed width */
-  width: 90px; /* Fixed width */
-  text-align: center;
-  flex-shrink: 0; /* Don't shrink */
-}
-
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: white;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-left: 10px;
+      width: 90px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    
     .featured-tool {
       border: 2px solid #f59e0b;
       position: relative;
@@ -503,6 +439,18 @@
       border-radius: 12px;
       margin: 30px 0;
       text-align: center;
+    }
+    
+    .affiliate-banner h4 {
+      margin-bottom: 10px;
+    }
+    
+    .affiliate-banner p {
+      margin-bottom: 15px;
+    }
+    
+    .affiliate-banner .cta-button {
+      margin-bottom: 15px;
     }
     
     .newsletter-box {
@@ -542,7 +490,7 @@
       background: white;
       border-radius: 12px;
       padding: 40px;
-      max-width: 800px;
+      max-width: 1000px;
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
@@ -596,6 +544,89 @@
     .m-level:nth-child(3) { border-left-color: #10b981; }
     .m-level:nth-child(4) { border-left-color: #3b82f6; }
     .m-level:nth-child(5) { border-left-color: #8b5cf6; }
+    
+    /* Dashboard Modal Specific Styles */
+    .dashboard-header {
+      margin-bottom: 30px;
+    }
+    
+    .dashboard-header h2 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+    
+    .dashboard-header p {
+      color: var(--gray);
+      font-size: 1rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .container {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        position: static;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: var(--dark);
+        cursor: pointer;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero {
+        padding: 30px 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .main-content {
+        padding: 25px;
+      }
+      
+      .logo img {
+        height: 80px;
+        width: auto;
+        max-width: 200px;
+        object-fit: contain;
+      }
+      
+      .logo {
+        font-size: 20px;
+        gap: 10px;
+      }
+      
+      .modal-content {
+        padding: 25px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .logo img {
+        height: 30px;
+        max-width: 120px;
+      }
+      
+      .logo {
+        font-size: 18px;
+        gap: 8px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -674,12 +705,16 @@
         <small>Contact for ad placement</small>
       </div>
       
-      <!-- Affiliate Banner -->
+      <!-- Affiliate Banner with Dashboard Button -->
       <div class="affiliate-banner">
         <h4>Partner Program</h4>
         <p>Earn 30% commission on referrals</p>
         <button class="cta-button" style="background: white; color: #8b5cf6;">
           Become Partner
+        </button>
+        <br><br>
+        <button class="cta-button" onclick="openDashboard()" style="background: white; color: #8b5cf6;">
+          <i class="fas fa-chart-bar"></i> View Dashboard
         </button>
       </div>
     </aside>
@@ -699,8 +734,7 @@
       <section id="about">
         <h2>About Our Services</h2>
         <p>We specialize in helping organizations of all sizes achieve compliance with India's DPDP Act 2023. Our comprehensive suite of tools, training, and consulting services ensures you meet all regulatory requirements while protecting your customers' data.</p>
-        
-       </section>
+      </section>
 
       <!-- Tools Grid -->
       <section id="tools">
@@ -741,8 +775,6 @@
       <!-- Services -->
       <section id="services" class="services">
         <h2>Consulting Services</h2>
-        
-       
         
         <!-- DPDP Maturity Model Service -->
         <div class="service-item" id="maturity-model-card">
@@ -837,6 +869,20 @@
     </div>
   </div>
 
+  <!-- Dashboard Modal -->
+  <div id="dashboardModal" class="modal-overlay" onclick="closeDashboard()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeDashboard()">×</span>
+      
+      <div class="dashboard-header">
+        <h2>DPDP Compliance Audit Dashboard</h2>
+        <p>Live internal audit visibility across DPDP obligations</p>
+      </div>
+
+      <div id="dpdp-dashboard-root"></div>
+    </div>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
@@ -884,6 +930,78 @@
     </div>
   </footer>
 
+  <!-- React for Dashboard -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- Dashboard React Component -->
+  <script type="text/babel">
+    function DashboardTile({title, value}) {
+      return (
+        <div style={{
+          background: "#fff",
+          padding: "20px",
+          borderRadius: "10px",
+          boxShadow: "0 2px 4px rgba(0,0,0,.1)"
+        }}>
+          <div style={{fontSize: "14px", color: "#6b7280"}}>{title}</div>
+          <div style={{fontSize: "22px", fontWeight: 700, color: "#2563eb"}}>{value}</div>
+        </div>
+      );
+    }
+
+    function DpdpAuditDashboard() {
+      const rows = [
+        ["Consent Management", "Compliant", "Low"],
+        ["Notice & Purpose", "Partial", "Medium"],
+        ["Security Safeguards", "Non-Compliant", "High"],
+        ["Breach Reporting", "Partial", "Medium"]
+      ];
+      
+      return (
+        <div>
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+            gap: "20px",
+            marginBottom: "30px"
+          }}>
+            <DashboardTile title="Overall Status" value="72%" />
+            <DashboardTile title="High Risk Areas" value="1" />
+            <DashboardTile title="Open Findings" value="2" />
+            <DashboardTile title="Last Audit" value="10 Jan 2026" />
+          </div>
+
+          <table style={{width: "100%", borderCollapse: "collapse"}}>
+            <thead style={{background: "#2563eb", color: "#fff"}}>
+              <tr>
+                <th style={{padding: "10px", textAlign: "left"}}>Section</th>
+                <th style={{padding: "10px", textAlign: "left"}}>Status</th>
+                <th style={{padding: "10px", textAlign: "left"}}>Risk</th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i} style={{background: i % 2 ? "#f3f4f6" : "#fff"}}>
+                  <td style={{padding: "10px"}}>{r[0]}</td>
+                  <td style={{padding: "10px"}}>{r[1]}</td>
+                  <td style={{padding: "10px"}}>{r[2]}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
+
+    // Render the dashboard component
+    const dashboardRoot = document.getElementById("dpdp-dashboard-root");
+    if (dashboardRoot) {
+      ReactDOM.createRoot(dashboardRoot).render(<DpdpAuditDashboard />);
+    }
+  </script>
+
   <!-- JavaScript -->
   <script>
     // Mobile menu toggle
@@ -920,61 +1038,43 @@
     // Track conversions
     document.querySelectorAll('.cta-button').forEach(button => {
       button.addEventListener('click', function() {
-        // Here you would integrate with Google Analytics or your tracking system
         console.log('CTA clicked:', this.textContent);
       });
     });
-    
-    // Display pricing in Indian Rupees
-    function formatIndianRupees(amount) {
-      return '₹' + amount.toLocaleString('en-IN');
-    }
     
     // Maturity Model Modal Functions
     function showMaturityModel() {
       const modal = document.getElementById('maturityModal');
       modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+      document.body.style.overflow = 'hidden';
     }
     
     function closeMaturityModel() {
       const modal = document.getElementById('maturityModal');
       modal.style.display = 'none';
-      document.body.style.overflow = 'auto'; // Restore scrolling
+      document.body.style.overflow = 'auto';
     }
     
-    // Close modal with Escape key
+    // Dashboard Modal Functions
+    function openDashboard() {
+      const modal = document.getElementById('dashboardModal');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeDashboard() {
+      const modal = document.getElementById('dashboardModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Close modals with Escape key
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         closeMaturityModel();
+        closeDashboard();
       }
     });
-    
-    // Close modal when clicking outside
-    document.getElementById('maturityModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeMaturityModel();
-      }
-    });
-    
-    // Add any additional monetization scripts here
-    // Example: Google AdSense, affiliate tracking, etc.
   </script>
-  
-  <!-- Monetization & Tracking Scripts (Add these before closing body tag) -->
-  <!--
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
 </body>
 </html>
