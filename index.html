@@ -537,7 +537,29 @@
       z-index: 2000;
       padding: 20px;
     }
-    
+    .dashboard-wrapper {
+  margin-top: 60px;
+  padding: 30px;
+  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+  border-radius: 16px;
+  border: 2px solid #2563eb;
+}
+
+.dashboard-header {
+  margin-bottom: 25px;
+}
+
+.dashboard-header h2 {
+  font-size: 24px;
+  color: #1d4ed8;
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  color: #475569;
+  font-size: 15px;
+}
+
     .modal-content {
       background: white;
       border-radius: 12px;
@@ -681,6 +703,10 @@
         <button class="cta-button" style="background: white; color: #8b5cf6;">
           Become Partner
         </button>
+        <button class="cta-button" onclick="document.getElementById('dpdp-dashboard-section').scrollIntoView({behavior:'smooth'})">
+  View Audit Dashboard
+</button>
+
       </div>
     </aside>
 
@@ -694,14 +720,12 @@
           <i class="fas fa-rocket"></i> Start Free Audit
         </button>
       </section>
-      <!-- DPDP Audit Dashboard Section -->
-<section id="dpdp-dashboard-section" style="margin-top:50px;">
-  <h2 style="margin-bottom:20px;">DPDP Compliance Audit Dashboard</h2>
-  <p style="margin-bottom:20px;color:#6b7280;">
-    Live internal audit visibility across DPDP Act obligations.
-  </p>
+      <section id="dpdp-dashboard-section" class="dashboard-wrapper">
+  <div class="dashboard-header">
+    <h2>DPDP Compliance Audit Dashboard</h2>
+    <p>Live internal audit visibility across DPDP Act obligations.</p>
+  </div>
 
-  <!-- React mounts here -->
   <div id="dpdp-dashboard-root"></div>
 </section>
 
