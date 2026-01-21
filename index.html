@@ -166,6 +166,7 @@
       font-weight: 500;
       transition: all 0.3s;
       border-left: 4px solid transparent;
+      justify-content: space-between;
     }
     
     .sidebar-menu a:hover {
@@ -444,9 +445,9 @@
   display: inline-block;
   margin-left: 10px;
   /* Add these for fixed width */
-  width: 80px; /* Adjust as needed */
+  width: 90px; /* Fixed width */
   text-align: center;
-  white-space: nowrap; /* Prevent text wrapping */
+  flex-shrink: 0; /* Don't shrink */
 }
 
     .featured-tool {
