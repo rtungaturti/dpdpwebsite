@@ -1,1067 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="DPDP Act 2023 Compliance Solutions - Audit Tools, Certification, Consulting Services. Ensure GDPR-like compliance for Indian data protection regulations.">
-  <meta name="keywords" content="DPDP Act 2023, Data Protection India, Compliance Audit, GDPR India, Data Privacy Consultant, DPDP Certification">
-  <meta name="author" content="DPDP Audits">
-  <meta property="og:title" content="DPDP Audits - Compliance Solutions & Automation">
-  <meta property="og:description" content="Professional DPDP Act 2023 compliance tools, audit services, and Automation programs.">
-  <meta property="og:image" content="https://dpdp-audits.com/images/og-image.jpg">
-  <meta property="og:url" content="https://dpdp-audits.com">
-  <meta name="twitter:card" content="summary_large_image">
-  
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <title>DPDP Audits | Compliance Solutions & Automation Services</title>
-  
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-dark: #1d4ed8;
-      --secondary: #10b981;
-      --dark: #1f2937;
-      --light: #f9fafb;
-      --gray: #6b7280;
-      --border: #e5e7eb;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      color: var(--dark);
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      min-height: 100vh;
-    }
-    
-    /* Header & Navigation */
-   .header {
-  background: white;
-  box-shadow: var(--shadow);
-  position: sticky;
-  top: 0;
-  z-index: 1000; /* Increased for modal compatibility */
-}
-    
-   .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px; /* Increased padding top/bottom */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-    
-    .logo {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 28px; /* Slightly larger font */
-  color: var(--primary);
-  text-decoration: none;
-}
-    /* FIXED: Logo image styling */
-    .logo img {
-      height: 80px; /* Fixed height for logo */
-      width: auto; /* Maintain aspect ratio */
-      max-width: 180px; /* Maximum width */
-      object-fit: contain; /* Ensure image fits properly */
-    }
-    
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
-    
-    .nav-links a {
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-    
-    .nav-links a:hover {
-      color: var(--primary);
-    }
-    
-    .cta-button {
-      background: var(--primary);
-      color: white;
-      padding: 10px 24px;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s;
-      border: none;
-      cursor: pointer;
-    }
-    
-    .cta-button:hover {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-    
-    /* Layout */
-    .container {
-      display: flex;
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-      gap: 30px;
-    }
-    
-    /* Sidebar */
-   .sidebar {
-  /* ... other styles ... */
-  position: sticky;
-  top: 120px; /* Increased from 90px to account for taller header */
-}
-    
-    .sidebar h3 {
-      color: var(--primary);
-      margin-bottom: 20px;
-      font-size: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .sidebar-menu {
-      list-style: none;
-    }
-    
-    .sidebar-menu li {
-      margin-bottom: 10px;
-    }
-    
-    .sidebar-menu a {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 15px;
-      background: var(--light);
-      border-radius: 8px;
-      text-decoration: none;
-      color: var(--dark);
-      font-weight: 500;
-      transition: all 0.3s;
-      border-left: 4px solid transparent;
-      justify-content: space-between;
-    }
-    
-    .sidebar-menu a:hover {
-      background: #e0e7ff;
-      border-left-color: var(--primary);
-      transform: translateX(5px);
-    }
-    
-    .sidebar-menu a i {
-      width: 20px;
-      color: var(--primary);
-    }
-    
-    /* Main Content */
-    .main-content {
-      flex: 1;
-      background: white;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: var(--shadow);
-    }
-    
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, #3b82f6 100%);
-      color: white;
-      padding: 50px;
-      border-radius: 12px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-    
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .hero p {
-      font-size: 1.1rem;
-      margin-bottom: 30px;
-      opacity: 0.9;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    
-    /* Tools Grid */
-    .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 25px;
-      margin: 40px 0;
-    }
-    
-    .tool-card {
-      background: var(--light);
-      border-radius: 12px;
-      padding: 25px;
-      transition: all 0.3s;
-      border: 2px solid transparent;
-    }
-    
-    .tool-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--primary);
-    }
-    
-    .tool-card h3 {
-      color: var(--primary);
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    
-    .tool-card p {
-      color: var(--gray);
-      margin-bottom: 20px;
-    }
-    
-    .tool-card .price {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-    
-    .tool-card .price span {
-      font-size: 1rem;
-      color: var(--gray);
-      font-weight: 400;
-    }
-    
-    /* Services Section */
-    .services {
-      margin: 50px 0;
-    }
-    
-    .service-item {
-      display: flex;
-      align-items: start;
-      gap: 20px;
-      margin-bottom: 30px;
-      padding: 25px;
-      background: var(--light);
-      border-radius: 12px;
-    }
-    
-    .service-icon {
-      background: var(--primary);
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      flex-shrink: 0;
-    }
-    
-    /* Text Button for Maturity Model */
-    .btn-text {
-      background: none;
-      border: none;
-      color: var(--primary);
-      font-weight: 600;
-      cursor: pointer;
-      padding: 5px 0;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all 0.3s;
-    }
-    
-    .btn-text:hover {
-      color: var(--primary-dark);
-      gap: 10px;
-    }
-    
-    /* Testimonials */
-    .testimonials {
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      padding: 40px;
-      border-radius: 12px;
-      margin: 50px 0;
-    }
-    
-    .testimonial {
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      margin-bottom: 20px;
-      box-shadow: var(--shadow);
-    }
-    
-    /* CTA Banner */
-    .cta-banner {
-      background: linear-gradient(135deg, var(--secondary) 0%, #34d399 100%);
-      color: white;
-      padding: 40px;
-      border-radius: 12px;
-      text-align: center;
-      margin: 50px 0;
-    }
-    
-    .cta-banner h2 {
-      margin-bottom: 20px;
-      font-size: 2rem;
-    }
-    
-    /* Footer */
-    .footer {
-      background: var(--dark);
-      color: white;
-      padding: 50px 0 20px;
-      margin-top: 80px;
-    }
-    
-    .footer-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-    }
-    
-    .footer-section h3 {
-      color: white;
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-    
-    .footer-links {
-      list-style: none;
-    }
-    
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-    
-    .footer-links a {
-      color: #d1d5db;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .footer-links a:hover {
-      color: white;
-    }
-    
-    .copyright {
-      text-align: center;
-      padding-top: 30px;
-      margin-top: 30px;
-      border-top: 1px solid #374151;
-      color: #9ca3af;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 992px) {
-      .container {
-        flex-direction: column;
-      }
-      
-      .sidebar {
-        width: 100%;
-        position: static;
-      }
-      
-      .nav-links {
-        display: none;
-      }
-      
-      .mobile-menu-btn {
-        display: block;
-        background: none;
-        border: none;
-        font-size: 24px;
-        color: var(--dark);
-        cursor: pointer;
-      }
-    }
-    
-    @media (max-width: 768px) {
-      .hero {
-        padding: 30px 20px;
-      }
-      
-      .hero h1 {
-        font-size: 2rem;
-      }
-      
-      .main-content {
-        padding: 25px;
-      }
-      
-      /* Responsive logo */
-     .logo img {
-  height: 80px;
-  width: auto;
-  max-width: 200px;
-  object-fit: contain;
-}
-      
-      .logo {
-        font-size: 20px; /* Smaller text on mobile */
-        gap: 10px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .logo img {
-        height: 30px;
-        max-width: 120px;
-      }
-      
-      .logo {
-        font-size: 18px;
-        gap: 8px;
-      }
-    }
-    
-    /* Monetization Elements */
-    .pricing-badge {
-  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  display: inline-block;
-  margin-left: 10px;
-  /* Add these for fixed width */
-  width: 90px; /* Fixed width */
-  text-align: center;
-  flex-shrink: 0; /* Don't shrink */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DPDP Audits | Compliance Solutions</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --primary:#2563eb;
+  --dark:#1f2937;
+  --light:#f9fafb;
+  --border:#e5e7eb;
+  --shadow:0 4px 10px rgba(0,0,0,.1);
 }
 
-    .featured-tool {
-      border: 2px solid #f59e0b;
-      position: relative;
-    }
-    
-    .featured-badge {
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      background: #f59e0b;
-      color: white;
-      padding: 5px 15px;
-      border-radius: 5px;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-    
-    .ad-space {
-      background: #f3f4f6;
-      border-radius: 8px;
-      padding: 20px;
-      text-align: center;
-      color: var(--gray);
-      margin: 30px 0;
-      border: 2px dashed #d1d5db;
-    }
-    
-    .affiliate-banner {
-      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-      color: white;
-      padding: 20px;
-      border-radius: 12px;
-      margin: 30px 0;
-      text-align: center;
-    }
-    
-    .newsletter-box {
-      background: linear-gradient(135deg, #ec4899 0%, #db2777 100%);
-      color: white;
-      padding: 30px;
-      border-radius: 12px;
-      margin: 40px 0;
-      text-align: center;
-    }
-    
-    .newsletter-box input {
-      padding: 12px 20px;
-      border-radius: 8px;
-      border: none;
-      width: 300px;
-      max-width: 100%;
-      margin: 15px 10px 15px 0;
-    }
-    
-    /* MODAL STYLES */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 2000;
-      padding: 20px;
-    }
-    .dashboard-wrapper {
-  margin-top: 60px;
-  padding: 30px;
-  background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
-  border-radius: 16px;
-  border: 2px solid #2563eb;
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,sans-serif;background:#f3f4f6;color:var(--dark)}
+
+.header{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:1000}
+.nav-container{max-width:1200px;margin:auto;padding:20px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;align-items:center;gap:12px;font-size:26px;font-weight:700;color:var(--primary);text-decoration:none}
+.logo img{height:60px}
+
+.cta-button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:10px 22px;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer
 }
 
-.dashboard-header {
-  margin-bottom: 25px;
+.container{max-width:1200px;margin:30px auto;display:flex;gap:30px;padding:0 20px}
+.sidebar{width:280px}
+.main-content{flex:1;background:#fff;padding:40px;border-radius:12px;box-shadow:var(--shadow)}
+
+.hero{
+  background:linear-gradient(135deg,#2563eb,#3b82f6);
+  color:#fff;
+  padding:50px;
+  border-radius:12px;
+  text-align:center;
+  margin-bottom:40px
 }
 
-.dashboard-header h2 {
-  font-size: 24px;
-  color: #1d4ed8;
-  margin-bottom: 8px;
+.affiliate-banner{
+  background:linear-gradient(135deg,#8b5cf6,#7c3aed);
+  color:#fff;
+  padding:20px;
+  border-radius:12px;
+  margin-top:30px;
+  text-align:center
 }
 
-.dashboard-header p {
-  color: #475569;
-  font-size: 15px;
+/* ===== MODAL ===== */
+.modal-overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:3000;
+  padding:20px
 }
 
-    .modal-content {
-      background: white;
-      border-radius: 12px;
-      padding: 40px;
-      max-width: 800px;
-      width: 100%;
-      max-height: 90vh;
-      overflow-y: auto;
-      position: relative;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    }
-    
-    .close-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 32px;
-      color: var(--gray);
-      cursor: pointer;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      transition: all 0.3s;
-    }
-    
-    .close-btn:hover {
-      background: var(--light);
-      color: var(--dark);
-    }
-    
-    .maturity-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 15px;
-      margin-top: 30px;
-    }
-    
-    .m-level {
-      background: var(--light);
-      padding: 20px;
-      border-radius: 8px;
-      border-left: 5px solid var(--primary);
-      transition: all 0.3s;
-    }
-    
-    .m-level:hover {
-      transform: translateX(5px);
-      box-shadow: var(--shadow);
-    }
-    
-    .m-level:nth-child(1) { border-left-color: #ef4444; }
-    .m-level:nth-child(2) { border-left-color: #f59e0b; }
-    .m-level:nth-child(3) { border-left-color: #10b981; }
-    .m-level:nth-child(4) { border-left-color: #3b82f6; }
-    .m-level:nth-child(5) { border-left-color: #8b5cf6; }
-  </style>
+.modal-content{
+  background:#fff;
+  border-radius:16px;
+  max-width:1000px;
+  width:100%;
+  max-height:90vh;
+  overflow:auto;
+  padding:35px;
+  position:relative
+}
+
+.close-btn{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:28px;
+  cursor:pointer;
+  color:#6b7280
+}
+
+.dashboard-header h2{color:#2563eb;margin-bottom:6px}
+.dashboard-header p{color:#475569;margin-bottom:20px}
+</style>
 </head>
+
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="nav-container">
-      <a href="#" class="logo">
-        <img src="logo.png" alt="DPDP Audits Logo">
-        DPDP Audits
-      </a>
-      
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#tools">Tools</a>
-        <a href="#services">Services</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#contact">Contact</a>
-        <button class="cta-button">
-          <i class="fas fa-calendar-check"></i> Book Consultation
-        </button>
-      </div>
-      
-      <button class="mobile-menu-btn">
-        <i class="fas fa-bars"></i>
+
+<header class="header">
+  <div class="nav-container">
+    <a class="logo" href="#">
+      <img src="logo.png"> DPDP Audits
+    </a>
+  </div>
+</header>
+
+<div class="container">
+  <aside class="sidebar">
+    <div class="affiliate-banner">
+      <h3>Partner Program</h3>
+      <p>Earn 30% commission</p>
+      <button class="cta-button" style="background:#fff;color:#7c3aed">
+        Become Partner
+      </button>
+      <br><br>
+      <button class="cta-button" onclick="openDashboard()">
+        View Audit Dashboard
       </button>
     </div>
-  </header>
+  </aside>
 
-  <!-- Main Container -->
-  <div class="container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <h3><i class="fas fa-tools"></i> Compliance Tools</h3>
-      <ul class="sidebar-menu">
-        <li>
-          <a href="https://dpdp-auditor--rtungaturti.replit.app/" target="_blank">
-            <i class="fas fa-clipboard-check"></i>
-            DPDP Audit Compliance Checklist
-            <span class="pricing-badge">FREE</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://dpdp-act-2023-compliance-audit-tool.onrender.com/" target="_blank">
-            <i class="fas fa-file-contract"></i>
-            DPDP Act 2023 Audit Tool
-            <span class="pricing-badge">PRO</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://dpdp-compliance-demo-pwoj.onrender.com/" target="_blank">
-            <i class="fas fa-laptop-code"></i>
-            DPDP Compliance Demo
-            <span class="pricing-badge">DEMO</span>
-          </a>
-        </li>
-        
-        <li>
-          <a href="#">
-            <i class="fas fa-file-signature"></i>
-            Policy Template Bundle
-            <span class="pricing-badge">₹4,999</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-user-shield"></i>
-            Data Protection Officer
-            <span class="pricing-badge">Consulting</span>
-          </a>
-        </li>
-      </ul>
-      
-      <!-- Ad Space -->
-      <div class="ad-space">
-        <p><i class="fas fa-ad"></i> Advertisement Space</p>
-        <small>Contact for ad placement</small>
-      </div>
-      
-      <!-- Affiliate Banner -->
-      <div class="affiliate-banner">
-        <h4>Partner Program</h4>
-        <p>Earn 30% commission on referrals</p>
-        <button class="cta-button" style="background: white; color: #8b5cf6;">
-          Become Partner
-        </button>
-        <button class="cta-button" onclick="document.getElementById('dpdp-dashboard-section').scrollIntoView({behavior:'smooth'})">
-  View Audit Dashboard
-</button>
+  <main class="main-content">
+    <section class="hero">
+      <h1>DPDP Act 2023 Compliance</h1>
+      <p>Audit tools, dashboards & consulting for Indian privacy law</p>
+    </section>
 
-      </div>
-    </aside>
+    <section>
+      <h2>About Our Services</h2>
+      <p>
+        We help organizations comply with India’s Digital Personal Data Protection Act
+        through audits, automation and consulting.
+      </p>
+    </section>
+  </main>
+</div>
 
-    <!-- Main Content -->
-    <main class="main-content">
-      <!-- Hero Section -->
-      <section class="hero">
-        <h1>DPDP Act 2023 Compliance Solutions</h1>
-        <p>Professional audit tools, certification programs, and consulting services to ensure your organization complies with India's Digital Personal Data Protection Act 2023.</p>
-        <button class="cta-button" style="background: white; color: var(--primary);">
-          <i class="fas fa-rocket"></i> Start Free Audit
-        </button>
-      </section>
-      <section id="dpdp-dashboard-section" class="dashboard-wrapper">
-  <div class="dashboard-header">
-    <h2>DPDP Compliance Audit Dashboard</h2>
-    <p>Live internal audit visibility across DPDP Act obligations.</p>
-  </div>
+<!-- ===== DASHBOARD MODAL ===== -->
+<div id="dashboardModal" class="modal-overlay" onclick="closeDashboard()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-btn" onclick="closeDashboard()">×</span>
 
-  <div id="dpdp-dashboard-root"></div>
-</section>
-
-
-      <!-- About Section -->
-      <section id="about">
-        <h2>About Our Services</h2>
-        <p>We specialize in helping organizations of all sizes achieve compliance with India's DPDP Act 2023. Our comprehensive suite of tools, training, and consulting services ensures you meet all regulatory requirements while protecting your customers' data.</p>
-        
-       </section>
-
-      <!-- Tools Grid -->
-      <section id="tools">
-        <h2>Our Premium Tools</h2>
-        <p>Choose from our range of compliance solutions:</p>
-        
-        <div class="tools-grid">
-          <div class="tool-card">
-            <h3><i class="fas fa-clipboard-check"></i> Basic Audit Checklist</h3>
-            <p>Free compliance checklist for small businesses</p>
-            <div class="price">FREE</div>
-            <a href="https://dpdp-auditor--rtungaturti.replit.app/" target="_blank" class="cta-button">
-              Use Tool
-            </a>
-          </div>
-          
-          <div class="tool-card featured-tool">
-            <div class="featured-badge">MOST POPULAR</div>
-            <h3><i class="fas fa-file-contract"></i> Pro Audit Tool</h3>
-            <p>Comprehensive audit tool with reporting and documentation</p>
-            <div class="price">₹8,999 <span>/year</span></div>
-            <a href="https://dpdp-act-2023-compliance-audit-tool.onrender.com/" target="_blank" class="cta-button">
-              Start 14-Day Trial
-            </a>
-          </div>
-          
-          <div class="tool-card">
-            <h3><i class="fas fa-laptop-code"></i> Compliance Demo</h3>
-            <p>Interactive demonstration of compliance requirements</p>
-            <div class="price">FREE DEMO</div>
-            <a href="https://dpdp-compliance-demo-pwoj.onrender.com/" target="_blank" class="cta-button">
-              View Demo
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services -->
-      <section id="services" class="services">
-        <h2>Consulting Services</h2>
-        
-       
-        
-        <!-- DPDP Maturity Model Service -->
-        <div class="service-item" id="maturity-model-card">
-          <div class="service-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <div>
-            <h3>DPDP Maturity Model</h3>
-            <p>A comprehensive assessment to understand your current standing and a roadmap to achieve full DPDP compliance.</p>
-            <button class="btn-text" onclick="showMaturityModel()">View Maturity Model →</button>
-          </div>
-        </div>
-        
-        <!-- Policy Development Service -->
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="fas fa-file-alt"></i>
-          </div>
-          <div>
-            <h3>Policy Development</h3>
-            <p>Custom privacy policies, consent forms, and data processing agreements.</p>
-            <p><strong>Starting at ₹49,999</strong></p>
-          </div>
-        </div>
-        
-        <!-- Virtual DPO Service -->
-        <div class="service-item">
-          <div class="service-icon">
-            <i class="fas fa-headset"></i>
-          </div>
-          <div>
-            <h3>Virtual DPO Service</h3>
-            <p>Outsource your Data Protection Officer requirements.</p>
-            <p><strong>₹79,999/month</strong></p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Newsletter -->
-      <div class="newsletter-box">
-        <h3>Subscribe to Compliance Updates</h3>
-        <p>Get monthly updates on DPDP regulations, compliance tips, and exclusive offers.</p>
-        <form id="newsletter-form">
-          <input type="email" placeholder="Enter your email" required>
-          <button type="submit" class="cta-button">Subscribe</button>
-        </form>
-        <small>By subscribing, you agree to our Privacy Policy</small>
-      </div>
-
-      <!-- Testimonials -->
-      <section class="testimonials">
-        <h2>Client Success Stories</h2>
-        <div class="testimonial">
-          <p>"DPDP Audits helped us achieve compliance in just 30 days. Their tools saved us hundreds of hours."</p>
-          <p><strong>— CTO, E-commerce Company</strong></p>
-        </div>
-        <div class="testimonial">
-          <p>"The certification course was excellent. Our entire legal team is now DPDP-certified."</p>
-          <p><strong>— Legal Head, Fintech Startup</strong></p>
-        </div>
-      </section>
-
-      <!-- Final CTA -->
-      <div class="cta-banner">
-        <h2>Start Your Compliance Journey Today</h2>
-        <p>Book a free 30-minute consultation with our experts</p>
-        <button class="cta-button" style="background: white; color: var(--secondary);">
-          <i class="fas fa-phone-alt"></i> Schedule Call
-        </button>
-      </div>
-    </main>
-  </div>
-
-  <!-- Maturity Model Modal -->
-  <div id="maturityModal" class="modal-overlay" onclick="closeMaturityModel()">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <span class="close-btn" onclick="closeMaturityModel()">×</span>
-      <h2>DPDP Compliance Maturity Levels</h2>
-      <p>Our assessment categorizes your organization into one of five stages based on the DPDP Act 2023 framework:</p>
-      <div class="maturity-grid">
-        <div class="m-level"><strong>Level 1: Reactive</strong> - Minimal documentation; privacy practices are unpredictable or missing.</div>
-        <div class="m-level"><strong>Level 2: Defined</strong> - Basic documentation exists; processes are reactive and inconsistent.</div>
-        <div class="m-level"><strong>Level 3: Strategic</strong> - Standardized, repeatable processes with defined roles like a DPO.</div>
-        <div class="m-level"><strong>Level 4: Managed</strong> - Automated compliance monitoring; consent management is integrated.</div>
-        <div class="m-level"><strong>Level 5: Optimized</strong> - Privacy is a core business driver; continuous risk-informed improvement.</div>
-      </div>
-      <div style="margin-top: 30px; text-align: center;">
-        <button class="cta-button" onclick="closeMaturityModel()">
-          <i class="fas fa-check"></i> Understand My Level
-        </button>
-      </div>
+    <div class="dashboard-header">
+      <h2>DPDP Compliance Audit Dashboard</h2>
+      <p>Live internal audit visibility across DPDP obligations</p>
     </div>
+
+    <div id="dpdp-dashboard-root"></div>
   </div>
+</div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>DPDP Audits</h3>
-        <p>Your trusted partner for DPDP Act 2023 compliance solutions.</p>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul class="footer-links">
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#tools">Tools</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Legal</h3>
-        <ul class="footer-links">
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-          <li><a href="#">Cookie Policy</a></li>
-          <li><a href="#">Refund Policy</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-section">
-        <h3>Contact</h3>
-        <p><i class="fas fa-envelope"></i> contact@dpdpaudits.com</p>
-        <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-        <div style="margin-top: 15px;">
-          <a href="#" style="color: white; margin-right: 15px;"><i class="fab fa-linkedin"></i></a>
-          <a href="#" style="color: white; margin-right: 15px;"><i class="fab fa-twitter"></i></a>
-          <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
-        </div>
-      </div>
-    </div>
-    
-    <div class="copyright">
-      <p>&copy; 2024 DPDP Audits. All rights reserved.</p>
-      <p>DPDP Act 2023 Compliance Solutions</p>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Mobile menu toggle
-    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-      const navLinks = document.querySelector('.nav-links');
-      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-    });
-    
-    // Newsletter form submission
-    document.getElementById('newsletter-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email = this.querySelector('input[type="email"]').value;
-      alert(`Thank you for subscribing with: ${email}`);
-      this.reset();
-    });
-    
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
-        }
-      });
-    });
-    
-    // Track conversions
-    document.querySelectorAll('.cta-button').forEach(button => {
-      button.addEventListener('click', function() {
-        // Here you would integrate with Google Analytics or your tracking system
-        console.log('CTA clicked:', this.textContent);
-      });
-    });
-    
-    // Display pricing in Indian Rupees
-    function formatIndianRupees(amount) {
-      return '₹' + amount.toLocaleString('en-IN');
-    }
-    
-    // Maturity Model Modal Functions
-    function showMaturityModel() {
-      const modal = document.getElementById('maturityModal');
-      modal.style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-    }
-    
-    function closeMaturityModel() {
-      const modal = document.getElementById('maturityModal');
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto'; // Restore scrolling
-    }
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeMaturityModel();
-      }
-    });
-    
-    // Close modal when clicking outside
-    document.getElementById('maturityModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        closeMaturityModel();
-      }
-    });
-    
-    // Add any additional monetization scripts here
-    // Example: Google AdSense, affiliate tracking, etc.
-  </script>
-  
-  <!-- Monetization & Tracking Scripts (Add these before closing body tag) -->
-  <!--
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
-  <!-- React for DPDP Dashboard -->
+<!-- ===== REACT ===== -->
 <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
 <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
 <script type="text/babel">
-const { useState } = React;
-
-function DpdpAuditDashboard() {
-  const audits = [
-    { section: "Consent Management", status: "Compliant", risk: "Low" },
-    { section: "Notice & Purpose Limitation", status: "Partial", risk: "Medium" },
-    { section: "Data Principal Rights", status: "Compliant", risk: "Low" },
-    { section: "Security Safeguards", status: "Non-Compliant", risk: "High" },
-    { section: "Breach Reporting", status: "Partial", risk: "Medium" },
-    { section: "Data Retention & Erasure", status: "Compliant", risk: "Low" }
-  ];
-
+function DashboardTile({title,value}) {
   return (
     <div style={{
-      background:"#f9fafb",
-      padding:"25px",
-      borderRadius:"12px",
-      boxShadow:"0 4px 6px rgba(0,0,0,0.1)"
+      background:"#fff",
+      padding:"20px",
+      borderRadius:"10px",
+      boxShadow:"0 2px 4px rgba(0,0,0,.1)"
     }}>
-      <div style={{
-        display:"grid",
-        gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",
-        gap:"20px",
-        marginBottom:"30px"
-      }}>
-        <DashboardTile title="Overall Status" value="72% Compliant" />
+      <div style={{fontSize:"14px",color:"#6b7280"}}>{title}</div>
+      <div style={{fontSize:"22px",fontWeight:700,color:"#2563eb"}}>{value}</div>
+    </div>
+  );
+}
+
+function DpdpAuditDashboard(){
+  const rows=[
+    ["Consent Management","Compliant","Low"],
+    ["Notice & Purpose","Partial","Medium"],
+    ["Security Safeguards","Non-Compliant","High"],
+    ["Breach Reporting","Partial","Medium"]
+  ];
+  return(
+    <div>
+      <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",gap:"20px",marginBottom:"30px"}}>
+        <DashboardTile title="Overall Status" value="72%" />
         <DashboardTile title="High Risk Areas" value="1" />
         <DashboardTile title="Open Findings" value="2" />
         <DashboardTile title="Last Audit" value="10 Jan 2026" />
       </div>
 
       <table style={{width:"100%",borderCollapse:"collapse"}}>
-        <thead>
-          <tr style={{background:"#2563eb",color:"white"}}>
-          <th style={{ padding: "12px", textAlign: "left" }}>DPDP Section</th>
-
-            <th>Status</th>
-            <th>Risk</th>
+        <thead style={{background:"#2563eb",color:"#fff"}}>
+          <tr>
+            <th style={{padding:"10px",textAlign:"left"}}>Section</th>
+            <th>Status</th><th>Risk</th>
           </tr>
         </thead>
         <tbody>
-          {audits.map((a,i)=>(
-            <tr key={i} style={{background:i%2?"#f3f4f6":"white"}}>
-              <td style={{padding:"12px"}}>{a.section}</td>
-              <td>{a.status}</td>
-              <td>{a.risk}</td>
+          {rows.map((r,i)=>(
+            <tr key={i} style={{background:i%2?"#f3f4f6":"#fff"}}>
+              <td style={{padding:"10px"}}>{r[0]}</td>
+              <td>{r[1]}</td><td>{r[2]}</td>
             </tr>
           ))}
         </tbody>
@@ -1070,26 +205,22 @@ function DpdpAuditDashboard() {
   );
 }
 
-function DashboardTile({title,value}) {
-  return (
-    <div style={{
-      background:"white",
-      padding:"20px",
-      borderRadius:"10px",
-      boxShadow:"0 2px 4px rgba(0,0,0,0.1)"
-    }}>
-      <div style={{color:"#6b7280",fontSize:"14px"}}>{title}</div>
-      <div style={{fontSize:"22px",fontWeight:"700",color:"#2563eb"}}>
-        {value}
-      </div>
-    </div>
-  );
-}
+ReactDOM.createRoot(document.getElementById("dpdp-dashboard-root"))
+  .render(<DpdpAuditDashboard />);
+</script>
 
-const root = ReactDOM.createRoot(
-  document.getElementById("dpdp-dashboard-root")
-);
-root.render(<DpdpAuditDashboard />);
+<script>
+function openDashboard(){
+  document.getElementById("dashboardModal").style.display="flex";
+  document.body.style.overflow="hidden";
+}
+function closeDashboard(){
+  document.getElementById("dashboardModal").style.display="none";
+  document.body.style.overflow="auto";
+}
+document.addEventListener("keydown",e=>{
+  if(e.key==="Escape") closeDashboard();
+});
 </script>
 
 </body>
