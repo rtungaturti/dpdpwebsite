@@ -694,6 +694,17 @@
           <i class="fas fa-rocket"></i> Start Free Audit
         </button>
       </section>
+      <!-- DPDP Audit Dashboard Section -->
+<section id="dpdp-dashboard-section" style="margin-top:50px;">
+  <h2 style="margin-bottom:20px;">DPDP Compliance Audit Dashboard</h2>
+  <p style="margin-bottom:20px;color:#6b7280;">
+    Live internal audit visibility across DPDP Act obligations.
+  </p>
+
+  <!-- React mounts here -->
+  <div id="dpdp-dashboard-root"></div>
+</section>
+
 
       <!-- About Section -->
       <section id="about">
@@ -976,5 +987,85 @@
     gtag('config', 'G-XXXXXXXXXX');
   </script>
   -->
+  <!-- React for DPDP Dashboard -->
+<script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+const { useState } = React;
+
+function DpdpAuditDashboard() {
+  const audits = [
+    { section: "Consent Management", status: "Compliant", risk: "Low" },
+    { section: "Notice & Purpose Limitation", status: "Partial", risk: "Medium" },
+    { section: "Data Principal Rights", status: "Compliant", risk: "Low" },
+    { section: "Security Safeguards", status: "Non-Compliant", risk: "High" },
+    { section: "Breach Reporting", status: "Partial", risk: "Medium" },
+    { section: "Data Retention & Erasure", status: "Compliant", risk: "Low" }
+  ];
+
+  return (
+    <div style={{
+      background:"#f9fafb",
+      padding:"25px",
+      borderRadius:"12px",
+      boxShadow:"0 4px 6px rgba(0,0,0,0.1)"
+    }}>
+      <div style={{
+        display:"grid",
+        gridTemplateColumns:"repeat(auto-fit,minmax(200px,1fr))",
+        gap:"20px",
+        marginBottom:"30px"
+      }}>
+        <DashboardTile title="Overall Status" value="72% Compliant" />
+        <DashboardTile title="High Risk Areas" value="1" />
+        <DashboardTile title="Open Findings" value="2" />
+        <DashboardTile title="Last Audit" value="10 Jan 2026" />
+      </div>
+
+      <table style={{width:"100%",borderCollapse:"collapse"}}>
+        <thead>
+          <tr style={{background:"#2563eb",color:"white"}}>
+            <th style="padding:12px;textAlign:"left">DPDP Section</th>
+            <th>Status</th>
+            <th>Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          {audits.map((a,i)=>(
+            <tr key={i} style={{background:i%2?"#f3f4f6":"white"}}>
+              <td style={{padding:"12px"}}>{a.section}</td>
+              <td>{a.status}</td>
+              <td>{a.risk}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function DashboardTile({title,value}) {
+  return (
+    <div style={{
+      background:"white",
+      padding:"20px",
+      borderRadius:"10px",
+      boxShadow:"0 2px 4px rgba(0,0,0,0.1)"
+    }}>
+      <div style={{color:"#6b7280",fontSize:"14px"}}>{title}</div>
+      <div style={{fontSize:"22px",fontWeight:"700",color:"#2563eb"}}>
+        {value}
+      </div>
+    </div>
+  );
+}
+
+const root = ReactDOM.createRoot(
+  document.getElementById("dpdp-dashboard-root")
+);
+root.render(<DpdpAuditDashboard />);
+</script>
+
 </body>
 </html>
