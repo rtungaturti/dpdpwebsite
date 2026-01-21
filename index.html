@@ -57,7 +57,7 @@
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000; /* Increased for modal compatibility */
 }
     
    .nav-container {
@@ -290,6 +290,25 @@
       flex-shrink: 0;
     }
     
+    /* Text Button for Maturity Model */
+    .btn-text {
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      padding: 5px 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.3s;
+    }
+    
+    .btn-text:hover {
+      color: var(--primary-dark);
+      gap: 10px;
+    }
+    
     /* Testimonials */
     .testimonials {
       background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
@@ -503,6 +522,80 @@
       max-width: 100%;
       margin: 15px 10px 15px 0;
     }
+    
+    /* MODAL STYLES */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      padding: 20px;
+    }
+    
+    .modal-content {
+      background: white;
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 800px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 32px;
+      color: var(--gray);
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: all 0.3s;
+    }
+    
+    .close-btn:hover {
+      background: var(--light);
+      color: var(--dark);
+    }
+    
+    .maturity-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+      margin-top: 30px;
+    }
+    
+    .m-level {
+      background: var(--light);
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 5px solid var(--primary);
+      transition: all 0.3s;
+    }
+    
+    .m-level:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow);
+    }
+    
+    .m-level:nth-child(1) { border-left-color: #ef4444; }
+    .m-level:nth-child(2) { border-left-color: #f59e0b; }
+    .m-level:nth-child(3) { border-left-color: #10b981; }
+    .m-level:nth-child(4) { border-left-color: #3b82f6; }
+    .m-level:nth-child(5) { border-left-color: #8b5cf6; }
   </style>
 </head>
 <body>
@@ -650,7 +743,20 @@
         <h2>Consulting Services</h2>
         
        
-                  
+        
+        <!-- DPDP Maturity Model Service -->
+        <div class="service-item" id="maturity-model-card">
+          <div class="service-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <div>
+            <h3>DPDP Maturity Model</h3>
+            <p>A comprehensive assessment to understand your current standing and a roadmap to achieve full DPDP compliance.</p>
+            <button class="btn-text" onclick="showMaturityModel()">View Maturity Model →</button>
+          </div>
+        </div>
+        
+        <!-- Policy Development Service -->
         <div class="service-item">
           <div class="service-icon">
             <i class="fas fa-file-alt"></i>
@@ -662,6 +768,7 @@
           </div>
         </div>
         
+        <!-- Virtual DPO Service -->
         <div class="service-item">
           <div class="service-icon">
             <i class="fas fa-headset"></i>
@@ -707,6 +814,27 @@
         </button>
       </div>
     </main>
+  </div>
+
+  <!-- Maturity Model Modal -->
+  <div id="maturityModal" class="modal-overlay" onclick="closeMaturityModel()">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeMaturityModel()">×</span>
+      <h2>DPDP Compliance Maturity Levels</h2>
+      <p>Our assessment categorizes your organization into one of five stages based on the DPDP Act 2023 framework:</p>
+      <div class="maturity-grid">
+        <div class="m-level"><strong>Level 1: Reactive</strong> - Minimal documentation; privacy practices are unpredictable or missing.</div>
+        <div class="m-level"><strong>Level 2: Defined</strong> - Basic documentation exists; processes are reactive and inconsistent.</div>
+        <div class="m-level"><strong>Level 3: Strategic</strong> - Standardized, repeatable processes with defined roles like a DPO.</div>
+        <div class="m-level"><strong>Level 4: Managed</strong> - Automated compliance monitoring; consent management is integrated.</div>
+        <div class="m-level"><strong>Level 5: Optimized</strong> - Privacy is a core business driver; continuous risk-informed improvement.</div>
+      </div>
+      <div style="margin-top: 30px; text-align: center;">
+        <button class="cta-button" onclick="closeMaturityModel()">
+          <i class="fas fa-check"></i> Understand My Level
+        </button>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
@@ -760,8 +888,8 @@
   <script>
     // Mobile menu toggle
     document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
-      document.querySelector('.nav-links').style.display = 
-        document.querySelector('.nav-links').style.display === 'flex' ? 'none' : 'flex';
+      const navLinks = document.querySelector('.nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
     });
     
     // Newsletter form submission
@@ -801,6 +929,33 @@
     function formatIndianRupees(amount) {
       return '₹' + amount.toLocaleString('en-IN');
     }
+    
+    // Maturity Model Modal Functions
+    function showMaturityModel() {
+      const modal = document.getElementById('maturityModal');
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    }
+    
+    function closeMaturityModel() {
+      const modal = document.getElementById('maturityModal');
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeMaturityModel();
+      }
+    });
+    
+    // Close modal when clicking outside
+    document.getElementById('maturityModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeMaturityModel();
+      }
+    });
     
     // Add any additional monetization scripts here
     // Example: Google AdSense, affiliate tracking, etc.
