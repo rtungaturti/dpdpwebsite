@@ -60,27 +60,25 @@
   z-index: 100;
 }
     
-    .nav-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-    }
+   .nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px; /* Increased padding top/bottom */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
     
     .logo {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 24px;
-      color: var(--primary);
-      text-decoration: none;
-    }
-    
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 28px; /* Slightly larger font */
+  color: var(--primary);
+  text-decoration: none;
+}
     /* FIXED: Logo image styling */
     .logo img {
       height: 80px; /* Fixed height for logo */
@@ -416,10 +414,12 @@
       }
       
       /* Responsive logo */
-      .logo img {
-        height: 35px; /* Smaller on mobile */
-        max-width: 150px;
-      }
+     .logo img {
+  height: 80px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+}
       
       .logo {
         font-size: 20px; /* Smaller text on mobile */
